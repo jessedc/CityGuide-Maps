@@ -10,13 +10,17 @@
 
 @class DetailViewController;
 
-#import <CoreData/CoreData.h>
+//#import "AddCountryTVC.h"
+//#import <CoreData/CoreData.h>
+#import "CoreDataTableViewController.h" // so we can fetch
+#import "Country.h"
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface MasterViewController : CoreDataTableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) Country *selectedCountry;
 
 @end
