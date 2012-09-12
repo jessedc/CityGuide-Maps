@@ -1,15 +1,18 @@
 //
-//  AddCountryTVC.m
+//  AddCityTVC.m
 //  CityGuideWithCoreData
 //
 //  Created by Audrey Tam on 12/09/12.
 //  Copyright (c) 2012 Audrey Tam. All rights reserved.
 //
 
-#import "AddCountryTVC.h"
+#import "AddCityTVC.h"
+#import "City.h"
 #import "Country.h"
 
-@implementation AddCountryTVC
+@implementation AddCityTVC
+
+@synthesize selectedCountry = _selectedCountry;
 @synthesize nameCell = _nameCell;
 @synthesize nameField = _nameField;
 @synthesize managedObjectContext = __managedObjectContext;
@@ -25,23 +28,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationItem.title = NSLocalizedString(@"Add Country", @"Add Country");
+
+    self.navigationItem.title = NSLocalizedString(@"Add City", @"Add City");
     self.navigationItem.rightBarButtonItem =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
-
 }
 
 - (IBAction)save:(id)sender {
-   
+    
     if ( self.nameField.text.length > 0 ) {
-        Country *country = [NSEntityDescription insertNewObjectForEntityForName:@"Country"
+        City *city = [NSEntityDescription insertNewObjectForEntityForName:@"City"
                                                          inManagedObjectContext:self.managedObjectContext];
-        country.countryName = self.nameField.text;
+        city.cityName = self.nameField.text;
+        city.inCountry = self.selectedCountry;
         [self.managedObjectContext save:nil];
-
     }
-
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -72,7 +74,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
     return self.nameCell;
 }
 

@@ -1,5 +1,5 @@
 //
-//  AddCountryTVC.h
+//  AddCityTVC.h
 //  CityGuideWithCoreData
 //
 //  Created by Audrey Tam on 12/09/12.
@@ -10,10 +10,12 @@
 
 @class Country;
 
-@interface AddCountryTVC : UITableViewController
+@interface AddCityTVC : UITableViewController
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *nameCell;
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) Country *selectedCountry;
+
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)save:(id)sender;

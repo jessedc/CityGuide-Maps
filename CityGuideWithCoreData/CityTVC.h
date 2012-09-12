@@ -1,5 +1,5 @@
 //
-//  AddCountryTVC.h
+//  CityTVC.h
 //  CityGuideWithCoreData
 //
 //  Created by Audrey Tam on 12/09/12.
@@ -7,15 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CoreDataTableViewController.h" 
 @class Country;
 
-@interface AddCountryTVC : UITableViewController
+@interface CityTVC : CoreDataTableViewController
 
-@property (strong, nonatomic) IBOutlet UITableViewCell *nameCell;
-@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
-- (IBAction)save:(id)sender;
+@property (strong, nonatomic) Country *selectedCountry;
 
 @end

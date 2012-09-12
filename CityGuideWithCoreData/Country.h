@@ -13,5 +13,14 @@
 @interface Country : NSManagedObject
 
 @property (nonatomic, retain) NSString * countryName;
+@property (nonatomic, retain) NSSet *cities;
+@end
+
+@interface Country (CoreDataGeneratedAccessors)
+
+- (void)addCitiesObject:(NSManagedObject *)value;
+- (void)removeCitiesObject:(NSManagedObject *)value;
+- (void)addCities:(NSSet *)values;
+- (void)removeCities:(NSSet *)values;
 
 @end
