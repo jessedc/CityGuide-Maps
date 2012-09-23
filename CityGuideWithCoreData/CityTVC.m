@@ -30,10 +30,14 @@
     // 2 - Request that Entity
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     
-    // 3 - Filter it if you want
+    // 3 - Filter to fetch only cities in selectedCountry
+    request.predicate = [NSPredicate predicateWithFormat:@"inCountry.countryName = %@", self.selectedCountry.countryName];
+    /*
+    // one-liner is equivalent to these three lines 
     NSString *attrName = @"inCountry.countryName";
     NSString *attrValue = self.selectedCountry.countryName;
-    request.predicate = [NSPredicate predicateWithFormat:@"%K like %@", attrName, attrValue];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K = %@", attrName, attrValue];
+    */ 
     
     // 4 - Sort it if you want
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"cityName"
@@ -50,6 +54,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // instead of MasterVC setting this @property, get it from selectedCountry managed object
+    self.managedObjectContext = self.selectedCountry.managedObjectContext;
     [self setupFetchedResultsController];
 }
 
@@ -75,8 +82,7 @@
 - (void)pushAddCityTVC:(id)sender
 {
     AddCityTVC *addCity = [[AddCityTVC alloc] initWithNibName:@"AddCityTVC" bundle:nil];
-    addCity.managedObjectContext = self.managedObjectContext;
-    addCity.selectedCountry = self.selectedCountry;
+    addCity.delegate = self;
     
     [self.navigationController pushViewController:addCity animated:YES];
 }
@@ -131,7 +137,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.tableView beginUpdates]; // Avoid  NSInternalInconsistencyException
         
-        // Delete the role object that was swiped
+        // Delete the city object that was swiped
         City *cityToDelete = [self.fetchedResultsController objectAtIndexPath:indexPath];
         NSLog(@"Deleting (%@)", cityToDelete.cityName);
         [self.managedObjectContext deleteObject:cityToDelete];
@@ -143,6 +149,15 @@
         
         [self.tableView endUpdates];
     }
+}
+
+- (void) cityDidGetAdded:(AddCityTVC *)tvc {
+    City *city = [NSEntityDescription insertNewObjectForEntityForName:@"City"
+                                               inManagedObjectContext:self.managedObjectContext];
+    city.cityName = tvc.nameField.text;
+    city.inCountry = self.selectedCountry;
+    
+    [self.managedObjectContext save:nil];
 }
 
 @end

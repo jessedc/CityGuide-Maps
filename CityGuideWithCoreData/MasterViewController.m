@@ -85,7 +85,9 @@
 - (void)pushAddCountryTVC:(id)sender
 {
     AddCountryTVC *addCountry = [[AddCountryTVC alloc] initWithNibName:@"AddCountryTVC" bundle:nil];
-    addCountry.managedObjectContext = self.managedObjectContext;
+    // instead of passing managedObjectContext, should set self as delegate to save new country
+    //addCountry.managedObjectContext = self.managedObjectContext;
+    addCountry.delegate = self;
 
     [self.navigationController pushViewController:addCountry animated:YES];
 }
@@ -124,7 +126,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.tableView beginUpdates]; // Avoid  NSInternalInconsistencyException
         
-        // Delete the role object that was swiped
+        // Delete the country object that was swiped
         Country *countryToDelete = [self.fetchedResultsController objectAtIndexPath:indexPath];
         NSLog(@"Deleting (%@)", countryToDelete.countryName);
         [self.managedObjectContext deleteObject:countryToDelete];
@@ -150,7 +152,8 @@
     CityTVC *cityTVC = [[CityTVC alloc] initWithNibName:@"CityTVC" bundle:nil];
     
     cityTVC.selectedCountry = (Country *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
-    cityTVC.managedObjectContext = self.managedObjectContext;
+    //don't need to set this here; it's an @property of selectedCountry
+    //cityTVC.managedObjectContext = self.managedObjectContext;
     
     [self.navigationController pushViewController:cityTVC animated:YES];
 }
@@ -160,6 +163,15 @@
 {
     Country *country = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = country.countryName;
+}
+
+#pragma mark AddCountryTVCDelegate Method
+- (void)countryDidGetAdded:(AddCountryTVC *)tvc {
+    Country *country = [NSEntityDescription insertNewObjectForEntityForName:@"Country"
+                 inManagedObjectContext:self.managedObjectContext];
+    country.countryName = tvc.nameField.text;
+    
+    [self.managedObjectContext save:nil];
 }
 
 @end

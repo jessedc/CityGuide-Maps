@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD306EBD160024FA00F4D9B8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD306EBB160024FA00F4D9B8 /* Model.xcdatamodeld */; };
+		CDCE6EB1160029A50024E4DB /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */; };
+		CDCE6EB7160030D10024E4DB /* readme in Resources */ = {isa = PBXBuildFile; fileRef = CDCE6EB6160030D10024E4DB /* readme */; };
+		CDCE6EBB160032FB0024E4DB /* CityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EB9160032FB0024E4DB /* CityTVC.m */; };
+		CDCE6EBC160032FB0024E4DB /* CityTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCE6EBA160032FB0024E4DB /* CityTVC.xib */; };
+		CDCE6EC01600354D0024E4DB /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EBF1600354D0024E4DB /* Country.m */; };
+		CDCE6EC31600354E0024E4DB /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EC21600354D0024E4DB /* City.m */; };
+		CDCE6ECB1600590F0024E4DB /* AddCityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EC91600590F0024E4DB /* AddCityTVC.m */; };
+		CDCE6ECC1600590F0024E4DB /* AddCityTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCE6ECA1600590F0024E4DB /* AddCityTVC.xib */; };
 		CDE423DC160011CF00CC7C52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE423DB160011CE00CC7C52 /* UIKit.framework */; };
 		CDE423DE160011CF00CC7C52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE423DD160011CF00CC7C52 /* Foundation.framework */; };
 		CDE423E0160011CF00CC7C52 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE423DF160011CF00CC7C52 /* CoreGraphics.framework */; };
@@ -14,14 +23,28 @@
 		CDE423E8160011CF00CC7C52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDE423E6160011CF00CC7C52 /* InfoPlist.strings */; };
 		CDE423EA160011CF00CC7C52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE423E9160011CF00CC7C52 /* main.m */; };
 		CDE423EE160011CF00CC7C52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE423ED160011CF00CC7C52 /* AppDelegate.m */; };
-		CDE423F1160011CF00CC7C52 /* CityGuideWithCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDE423EF160011CF00CC7C52 /* CityGuideWithCoreData.xcdatamodeld */; };
 		CDE423F4160011CF00CC7C52 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE423F3160011CF00CC7C52 /* MasterViewController.m */; };
-		CDE423F7160011CF00CC7C52 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE423F6160011CF00CC7C52 /* DetailViewController.m */; };
 		CDE423FA160011CF00CC7C52 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE423F8160011CF00CC7C52 /* MasterViewController.xib */; };
-		CDE423FD160011CF00CC7C52 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE423FB160011CF00CC7C52 /* DetailViewController.xib */; };
+		CDE424061600132000CC7C52 /* AddCountryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE424041600132000CC7C52 /* AddCountryTVC.m */; };
+		CDE424071600132000CC7C52 /* AddCountryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE424051600132000CC7C52 /* AddCountryTVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD306EBC160024FA00F4D9B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		CDCE6EB0160029A50024E4DB /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		CDCE6EB6160030D10024E4DB /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
+		CDCE6EB8160032FB0024E4DB /* CityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTVC.h; sourceTree = "<group>"; };
+		CDCE6EB9160032FB0024E4DB /* CityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTVC.m; sourceTree = "<group>"; };
+		CDCE6EBA160032FB0024E4DB /* CityTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityTVC.xib; sourceTree = "<group>"; };
+		CDCE6EBD160034390024E4DB /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		CDCE6EBE1600354D0024E4DB /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		CDCE6EBF1600354D0024E4DB /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		CDCE6EC11600354D0024E4DB /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		CDCE6EC21600354D0024E4DB /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		CDCE6EC81600590F0024E4DB /* AddCityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCityTVC.h; sourceTree = "<group>"; };
+		CDCE6EC91600590F0024E4DB /* AddCityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCityTVC.m; sourceTree = "<group>"; };
+		CDCE6ECA1600590F0024E4DB /* AddCityTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCityTVC.xib; sourceTree = "<group>"; };
 		CDE423D7160011CE00CC7C52 /* CityGuideWithCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuideWithCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE423DB160011CE00CC7C52 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CDE423DD160011CF00CC7C52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -33,13 +56,12 @@
 		CDE423EB160011CF00CC7C52 /* CityGuideWithCoreData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CityGuideWithCoreData-Prefix.pch"; sourceTree = "<group>"; };
 		CDE423EC160011CF00CC7C52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDE423ED160011CF00CC7C52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CDE423F0160011CF00CC7C52 /* CityGuideWithCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityGuideWithCoreData.xcdatamodel; sourceTree = "<group>"; };
 		CDE423F2160011CF00CC7C52 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		CDE423F3160011CF00CC7C52 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		CDE423F5160011CF00CC7C52 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		CDE423F6160011CF00CC7C52 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		CDE423F9160011CF00CC7C52 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		CDE423FC160011CF00CC7C52 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		CDE424031600132000CC7C52 /* AddCountryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCountryTVC.h; sourceTree = "<group>"; };
+		CDE424041600132000CC7C52 /* AddCountryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCountryTVC.m; sourceTree = "<group>"; };
+		CDE424051600132000CC7C52 /* AddCountryTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCountryTVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +79,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CDCE6EB3160030330024E4DB /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				CDE423F2160011CF00CC7C52 /* MasterViewController.h */,
+				CDE423F3160011CF00CC7C52 /* MasterViewController.m */,
+				CDE423F8160011CF00CC7C52 /* MasterViewController.xib */,
+				CDE424031600132000CC7C52 /* AddCountryTVC.h */,
+				CDE424041600132000CC7C52 /* AddCountryTVC.m */,
+				CDE424051600132000CC7C52 /* AddCountryTVC.xib */,
+				CDCE6EBE1600354D0024E4DB /* Country.h */,
+				CDCE6EBF1600354D0024E4DB /* Country.m */,
+			);
+			name = Country;
+			sourceTree = "<group>";
+		};
+		CDCE6EB4160030670024E4DB /* City */ = {
+			isa = PBXGroup;
+			children = (
+				CDCE6EB8160032FB0024E4DB /* CityTVC.h */,
+				CDCE6EB9160032FB0024E4DB /* CityTVC.m */,
+				CDCE6EBA160032FB0024E4DB /* CityTVC.xib */,
+				CDCE6EC81600590F0024E4DB /* AddCityTVC.h */,
+				CDCE6EC91600590F0024E4DB /* AddCityTVC.m */,
+				CDCE6ECA1600590F0024E4DB /* AddCityTVC.xib */,
+				CDCE6EC11600354D0024E4DB /* City.h */,
+				CDCE6EC21600354D0024E4DB /* City.m */,
+			);
+			name = City;
+			sourceTree = "<group>";
+		};
 		CDE423CC160011CE00CC7C52 = {
 			isa = PBXGroup;
 			children = (
@@ -88,16 +140,15 @@
 		CDE423E3160011CF00CC7C52 /* CityGuideWithCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				CDCE6EB6160030D10024E4DB /* readme */,
 				CDE423EC160011CF00CC7C52 /* AppDelegate.h */,
 				CDE423ED160011CF00CC7C52 /* AppDelegate.m */,
-				CDE423F2160011CF00CC7C52 /* MasterViewController.h */,
-				CDE423F3160011CF00CC7C52 /* MasterViewController.m */,
-				CDE423F5160011CF00CC7C52 /* DetailViewController.h */,
-				CDE423F6160011CF00CC7C52 /* DetailViewController.m */,
-				CDE423F8160011CF00CC7C52 /* MasterViewController.xib */,
-				CDE423FB160011CF00CC7C52 /* DetailViewController.xib */,
-				CDE423EF160011CF00CC7C52 /* CityGuideWithCoreData.xcdatamodeld */,
+				CDCE6EB3160030330024E4DB /* Country */,
+				CDCE6EB4160030670024E4DB /* City */,
 				CDE423E4160011CF00CC7C52 /* Supporting Files */,
+				CD306EBB160024FA00F4D9B8 /* Model.xcdatamodeld */,
+				CDCE6EB0160029A50024E4DB /* CoreDataTableViewController.h */,
+				CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */,
 			);
 			path = CityGuideWithCoreData;
 			sourceTree = "<group>";
@@ -166,7 +217,10 @@
 			files = (
 				CDE423E8160011CF00CC7C52 /* InfoPlist.strings in Resources */,
 				CDE423FA160011CF00CC7C52 /* MasterViewController.xib in Resources */,
-				CDE423FD160011CF00CC7C52 /* DetailViewController.xib in Resources */,
+				CDE424071600132000CC7C52 /* AddCountryTVC.xib in Resources */,
+				CDCE6EB7160030D10024E4DB /* readme in Resources */,
+				CDCE6EBC160032FB0024E4DB /* CityTVC.xib in Resources */,
+				CDCE6ECC1600590F0024E4DB /* AddCityTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,9 +233,14 @@
 			files = (
 				CDE423EA160011CF00CC7C52 /* main.m in Sources */,
 				CDE423EE160011CF00CC7C52 /* AppDelegate.m in Sources */,
-				CDE423F1160011CF00CC7C52 /* CityGuideWithCoreData.xcdatamodeld in Sources */,
 				CDE423F4160011CF00CC7C52 /* MasterViewController.m in Sources */,
-				CDE423F7160011CF00CC7C52 /* DetailViewController.m in Sources */,
+				CDE424061600132000CC7C52 /* AddCountryTVC.m in Sources */,
+				CD306EBD160024FA00F4D9B8 /* Model.xcdatamodeld in Sources */,
+				CDCE6EB1160029A50024E4DB /* CoreDataTableViewController.m in Sources */,
+				CDCE6EBB160032FB0024E4DB /* CityTVC.m in Sources */,
+				CDCE6EC01600354D0024E4DB /* Country.m in Sources */,
+				CDCE6EC31600354E0024E4DB /* City.m in Sources */,
+				CDCE6ECB1600590F0024E4DB /* AddCityTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,14 +261,6 @@
 				CDE423F9160011CF00CC7C52 /* en */,
 			);
 			name = MasterViewController.xib;
-			sourceTree = "<group>";
-		};
-		CDE423FB160011CF00CC7C52 /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDE423FC160011CF00CC7C52 /* en */,
-			);
-			name = DetailViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -305,17 +356,19 @@
 				CDE42402160011CF00CC7C52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CDE423EF160011CF00CC7C52 /* CityGuideWithCoreData.xcdatamodeld */ = {
+		CD306EBB160024FA00F4D9B8 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CDE423F0160011CF00CC7C52 /* CityGuideWithCoreData.xcdatamodel */,
+				CDCE6EBD160034390024E4DB /* Model 2.xcdatamodel */,
+				CD306EBC160024FA00F4D9B8 /* Model.xcdatamodel */,
 			);
-			currentVersion = CDE423F0160011CF00CC7C52 /* CityGuideWithCoreData.xcdatamodel */;
-			path = CityGuideWithCoreData.xcdatamodeld;
+			currentVersion = CDCE6EBD160034390024E4DB /* Model 2.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

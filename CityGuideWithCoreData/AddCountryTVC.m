@@ -33,13 +33,12 @@
 }
 
 - (IBAction)save:(id)sender {
-   
-    if ( self.nameField.text.length > 0 ) {
-        Country *country = [NSEntityDescription insertNewObjectForEntityForName:@"Country"
-                                                         inManagedObjectContext:self.managedObjectContext];
-        country.countryName = self.nameField.text;
-        [self.managedObjectContext save:nil];
-
+    if ( self.nameField.text.length > 0 ) {        
+        // instead of saving managedObjectContext here, tell delegate to save new country
+        if (self.delegate && [self.delegate respondsToSelector:
+                              @selector(countryDidGetAdded:)]) {
+            [self.delegate countryDidGetAdded:self];
+        }
     }
 
     [self.navigationController popViewControllerAnimated:YES];

@@ -14,4 +14,21 @@
 @dynamic countryName;
 @dynamic cities;
 
+- (void)addCitiesObject:(NSManagedObject *)value {
+    
+
+}
+
+- (void)removeCitiesObject:(NSManagedObject *)value {
+    
+}
+
+- (void)addCities:(NSSet *)values {
+    
+}
+
+- (void)removeCities:(NSSet *)values {
+    
+}
+
 @end

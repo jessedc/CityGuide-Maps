@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class Country;
+@class AddCountryTVC;
+
+@protocol AddCountryTVCDelegate <NSObject>
+
+- (void)countryDidGetAdded:(AddCountryTVC *)tvc;
+
+@end
 
 @interface AddCountryTVC : UITableViewController
 
@@ -16,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (weak, nonatomic) id<AddCountryTVCDelegate> delegate;
 - (IBAction)save:(id)sender;
 
 @end

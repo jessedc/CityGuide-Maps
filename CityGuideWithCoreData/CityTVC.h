@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h" 
-@class Country;
 
-@interface CityTVC : CoreDataTableViewController
+@class Country;
+#import "AddCityTVC.h"
+
+@interface CityTVC : CoreDataTableViewController <AddCityTVCDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

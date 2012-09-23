@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class Country;
+#import "AddCountryTVC.h"
 
 #import "CoreDataTableViewController.h" // so we can fetch
 
-@interface MasterViewController : CoreDataTableViewController
+@interface MasterViewController : CoreDataTableViewController <AddCountryTVCDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

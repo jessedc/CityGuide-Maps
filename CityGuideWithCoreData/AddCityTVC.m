@@ -12,10 +12,8 @@
 
 @implementation AddCityTVC
 
-@synthesize selectedCountry = _selectedCountry;
 @synthesize nameCell = _nameCell;
 @synthesize nameField = _nameField;
-@synthesize managedObjectContext = __managedObjectContext;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,11 +35,11 @@
 - (IBAction)save:(id)sender {
     
     if ( self.nameField.text.length > 0 ) {
-        City *city = [NSEntityDescription insertNewObjectForEntityForName:@"City"
-                                                         inManagedObjectContext:self.managedObjectContext];
-        city.cityName = self.nameField.text;
-        city.inCountry = self.selectedCountry;
-        [self.managedObjectContext save:nil];
+        // instead of saving managedObjectContext here, tell delegate to save new city
+        if (self.delegate && [self.delegate respondsToSelector:
+                              @selector(cityDidGetAdded:)]) {
+            [self.delegate cityDidGetAdded:self];
+        }
     }
     
     [self.navigationController popViewControllerAnimated:YES];
