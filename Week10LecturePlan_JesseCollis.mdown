@@ -1,2 +1,138 @@
-RMIT Lecture Plan 2012
+  # Week 10 2012 RMIT Lecture Plan
 
+## MapKit, NSLocalizedString() + some Networking tips
+
+Presented by [Jesse Collis][1] / [@sirjec][3]
+
+## Goals
+
+ 1. Take the CityGuideWithCoreData project and display the cities on a `MKMapView`
+ 2. Use the [Google Geocoding API][4] to find each city's Geocode and plot them on the map
+ 3. Add French and Korean localisations with `NSLocalizedString`
+ 4. Discuss some simple networking options for your final project (time permitting).
+
+
+**NB:** Maps in iOS 6 are API compatible with iOS 5
+
+## Key Cocoa Classes and Topics
+
+ - MapKit (`MKMapView`, `MKAnnotation`, `MKPinAnnotationView`)
+
+ - Localisation (`NSLocalizedString()`, `.strings` files.)
+
+ - Ideas for simple networking / remote data for your final project. (`NSPropertyListSerialization`, `AFNetworking`)
+
+## 1. Using MKMapView in CityGuide
+
+- Link the MapKit and CoreLocation frameworks.
+
+- Add a new UIViewController named 'CityMapViewController' with an MKMapView as it's view.
+    - 'CityMapViewController' must implement `MKMapViewDelegate`.
+    - `CityTVC` must implement `didSelectRow:atIndexPath:` to present 'CityMapViewController', passing the City as a parameter.
+    - Include a `@property` of type `id<MKAnnotation>` named 'City' that it can add to it's `MKMapView` on `viewDidLoad`.
+
+- Modify `City` objects to conform to the `MKAnnotation` protocol.
+    - Set a default (static) coordinate (the same for each city)
+    - Use -37.813611, 144.963056
+
+- Set an appropriate zoom level on on `ViewWillAppear:` with the MKAnnotation in the centre.
+
+>   MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([self.city coordinate], 6000, 6000);
+>   [self.mapView setRegion:region animated:NO];
+
+- Implement `mapView:viewForAnnotation:` and return a `MKPinAnnotationView`.
+    - Set `canShowCallout` to YES to enable the `title` property of the annotation.
+
+### Using the Apple's CLGeocoder
+
+- Give it an address string
+- Returns CLPlacemark objects
+
+### Using the Google Geocode service
+
+- Include third party networking library [AFNetworking][7]
+- I've include only the classes that I need
+- Disable ARC with `-fno-objc-arc` on [each file][6]
+- It uses blocks, handles all your networking in a nice way
+
+#### AFNetworking JSONRequest API
+
+    [AFJSONRequestOperation JSONRequestOperationWithRequest:request 
+      success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {} 
+      failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {}];
+
+
+#### Optional extras: 
+
+####Advanced Idea #1: Saving the coordinate to the Model
+
+    //NSValue Category
+    + (id)valueWithCLLocationCoodinate2D:(CLLocationCoordinate2D)coordinate {
+      return [self valueWithBytes:&coordinate objCType:@encode(CLLocationCoordinate2D)];
+    }
+
+    - (CLLocationCoordinate2D)CLLocationCoordinate2DValue {
+      CLLocationCoordinate2D coordinate;
+      [self getValue:&coordinate];
+      return coordinate;
+    }
+
+
+#### Advanced idea #2: present all the cities on a map
+
+## 2. Internationalisation (i18n)
+
+  **Huge Topic**: See Apple's [Introduction to Internationalisation Programming Topics][5]
+
+1. During development use `NSLocalizedString(key, comment)` instead of static NSStrings in your code.
+2. A lot of developers use the English translation (or developer locale) for the key
+3. Make sure you put a useful description. _You'll thank me later_
+
+#### genstrings example
+
+    genstrings  ./CityGuideWithCoreData/*.m -o ./CityGuideWithCoreData/en.lproj
+
+4. Adding new language support to your app is as simple as taking that `.strings` file, changing the values and placing another copy of it into a different .lproj directory based on the language.
+
+5. You can start this process within Xcode
+
+### Neat tip: localising the app's display name
+
+- Built into each project is an `InfoPlist.strings`
+- It works the same way as the others, but against the InfoPlist.strings keys
+- 'CFBundleDisplayName' is they key
+
+
+## 3. Simple networking
+
+Simplest `.plist` and `NSData`:
+
+    [NSData dataWithContentsOfURL:(NSURL *)aURL];
+
+    [NSPropertyListSerialization propertyListFromData:(NSData *)
+	                                   mutabilityOption:(NSPropertyListMutabilityOptions)
+	                                             format:(NSPropertyListFormat *)
+	                                   errorDescription:(out NSString *__strong *)];
+
+Advantages / disadvantages of this approach
+
+- It's networking is very simple and fragile
+
+A better option: `JSON` + `AFNetworking` + `DropBox`
+
+Just host your JSON or plist file on dropbox! Then you can modify your data from elsewhere.
+
+## Additional resources
+
+ - For heaps more on Localisation, another set of notes of mine with heaps of ideas and links: [JCLocalizedStringPreso on github][2]
+
+
+
+
+[1]: mailto:jesse@jcmultimedia.com.au
+[2]: https://github.com/jessedc/JCLocalizedStringPreso
+[3]: http://twitter.com/sirjec
+[4]: https://developers.google.com/maps/documentation/geocoding
+[5]: http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPInternational/BPInternational.html#//apple_ref/doc/uid/10000171i
+[6]: http://stackoverflow.com/questions/6646052/how-can-i-disable-arc-for-a-single-file-in-a-project
+[7]: https://github.com/AFNetworking/AFNetworking
