@@ -111,7 +111,38 @@
 
 - (void)googleGeocodeCity:(City *)city
 {
+  NSString *fullCityName = [NSString stringWithFormat:@"%@ %@", self.city.cityName, self.city.inCountry.countryName];
+  NSString *googleAPIRequestString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=%@", [fullCityName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+  NSURL *googleAPIRequestURL = [NSURL URLWithString:googleAPIRequestString];
+  NSURLRequest *geocodeRequest = [NSURLRequest requestWithURL:googleAPIRequestURL];
 
+  __block CityMapViewController *block_self = self;
+
+  AFJSONRequestOperation *requestOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:geocodeRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+
+    NSDictionary *results = [[JSON objectForKey:@"results"] objectAtIndex:0];
+    double latitude = [[results valueForKeyPath:@"geometry.location.lat"] doubleValue];
+    double longitude = [[results valueForKeyPath:@"geometry.location.lng"] doubleValue];
+
+    self.city.coordinate = CLLocationCoordinate2DMake(latitude,longitude);
+
+    [block_self centerMapAtCity:self.city animated:YES];
+
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+
+  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"Google geocode error"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:nil];
+    NSLog(@"%@",error);
+    [alertView show];
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+  }];
+
+  [requestOperation start];
+  self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 @end
