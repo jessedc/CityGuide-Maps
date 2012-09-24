@@ -15,6 +15,7 @@
 		889B2B091610838600D6D314 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 889B2B031610838600D6D314 /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		889B2B0A1610838600D6D314 /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 889B2B051610838600D6D314 /* AFJSONUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		889B2B0B1610838600D6D314 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 889B2B071610838600D6D314 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		889B2B1316110DA700D6D314 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 889B2B1116110DA700D6D314 /* Localizable.strings */; };
 		CD306EBD160024FA00F4D9B8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD306EBB160024FA00F4D9B8 /* Model.xcdatamodeld */; };
 		CDCE6EB1160029A50024E4DB /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */; };
 		CDCE6EBB160032FB0024E4DB /* CityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EB9160032FB0024E4DB /* CityTVC.m */; };
@@ -50,6 +51,7 @@
 		889B2B051610838600D6D314 /* AFJSONUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONUtilities.m; sourceTree = "<group>"; };
 		889B2B061610838600D6D314 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
 		889B2B071610838600D6D314 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		889B2B1216110DA700D6D314 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CD306EBC160024FA00F4D9B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		CDCE6EB0160029A50024E4DB /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		CDE423E4160011CF00CC7C52 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				889B2B1116110DA700D6D314 /* Localizable.strings */,
 				CDE423E5160011CF00CC7C52 /* CityGuideWithCoreData-Info.plist */,
 				CDE423E6160011CF00CC7C52 /* InfoPlist.strings */,
 				CDE423E9160011CF00CC7C52 /* main.m */,
@@ -270,6 +273,7 @@
 				CDCE6EBC160032FB0024E4DB /* CityTVC.xib in Resources */,
 				CDCE6ECC1600590F0024E4DB /* AddCityTVC.xib in Resources */,
 				889B2AF2161078FC00D6D314 /* CityMapViewController.xib in Resources */,
+				889B2B1316110DA700D6D314 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +305,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		889B2B1116110DA700D6D314 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				889B2B1216110DA700D6D314 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		CDE423E6160011CF00CC7C52 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
