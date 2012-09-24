@@ -11,6 +11,10 @@
 		889B2AF2161078FC00D6D314 /* CityMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889B2AF0161078FC00D6D314 /* CityMapViewController.xib */; };
 		889B2AF41610794200D6D314 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889B2AF31610794200D6D314 /* MapKit.framework */; };
 		889B2AF61610794600D6D314 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889B2AF51610794600D6D314 /* CoreLocation.framework */; };
+		889B2B081610838600D6D314 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 889B2B011610838600D6D314 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		889B2B091610838600D6D314 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 889B2B031610838600D6D314 /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		889B2B0A1610838600D6D314 /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 889B2B051610838600D6D314 /* AFJSONUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		889B2B0B1610838600D6D314 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 889B2B071610838600D6D314 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CD306EBD160024FA00F4D9B8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD306EBB160024FA00F4D9B8 /* Model.xcdatamodeld */; };
 		CDCE6EB1160029A50024E4DB /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */; };
 		CDCE6EBB160032FB0024E4DB /* CityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EB9160032FB0024E4DB /* CityTVC.m */; };
@@ -38,6 +42,14 @@
 		889B2AF0161078FC00D6D314 /* CityMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityMapViewController.xib; sourceTree = "<group>"; };
 		889B2AF31610794200D6D314 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		889B2AF51610794600D6D314 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		889B2B001610838600D6D314 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		889B2B011610838600D6D314 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		889B2B021610838600D6D314 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		889B2B031610838600D6D314 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		889B2B041610838600D6D314 /* AFJSONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONUtilities.h; sourceTree = "<group>"; };
+		889B2B051610838600D6D314 /* AFJSONUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONUtilities.m; sourceTree = "<group>"; };
+		889B2B061610838600D6D314 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		889B2B071610838600D6D314 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		CD306EBC160024FA00F4D9B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		CDCE6EB0160029A50024E4DB /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -98,6 +110,21 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
+		889B2AFF1610838600D6D314 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				889B2B001610838600D6D314 /* AFHTTPRequestOperation.h */,
+				889B2B011610838600D6D314 /* AFHTTPRequestOperation.m */,
+				889B2B021610838600D6D314 /* AFJSONRequestOperation.h */,
+				889B2B031610838600D6D314 /* AFJSONRequestOperation.m */,
+				889B2B041610838600D6D314 /* AFJSONUtilities.h */,
+				889B2B051610838600D6D314 /* AFJSONUtilities.m */,
+				889B2B061610838600D6D314 /* AFURLConnectionOperation.h */,
+				889B2B071610838600D6D314 /* AFURLConnectionOperation.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
 		CDCE6EB3160030330024E4DB /* Country */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				CDE423E3160011CF00CC7C52 /* CityGuideWithCoreData */,
+				889B2AFF1610838600D6D314 /* AFNetworking */,
 				CDE423DA160011CE00CC7C52 /* Frameworks */,
 				CDE423D8160011CE00CC7C52 /* Products */,
 			);
@@ -263,6 +291,10 @@
 				CDCE6EC31600354E0024E4DB /* City.m in Sources */,
 				CDCE6ECB1600590F0024E4DB /* AddCityTVC.m in Sources */,
 				889B2AF1161078FC00D6D314 /* CityMapViewController.m in Sources */,
+				889B2B081610838600D6D314 /* AFHTTPRequestOperation.m in Sources */,
+				889B2B091610838600D6D314 /* AFJSONRequestOperation.m in Sources */,
+				889B2B0A1610838600D6D314 /* AFJSONUtilities.m in Sources */,
+				889B2B0B1610838600D6D314 /* AFURLConnectionOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
