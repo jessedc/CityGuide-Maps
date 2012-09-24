@@ -10,6 +10,7 @@
 #import "City.h"
 #import "Country.h"
 #import "AddCityTVC.h"
+#import "CityMapViewController.h"
 
 @interface CityTVC ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -149,6 +150,15 @@
         
         [self.tableView endUpdates];
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  City *city = [self.fetchedResultsController objectAtIndexPath:indexPath];
+  CityMapViewController *cityMapViewController = [[CityMapViewController alloc] initWithNibName:@"CityMapViewController" bundle:nil];
+  cityMapViewController.city = city;
+
+  [self.navigationController pushViewController:cityMapViewController animated:YES];
 }
 
 - (void) cityDidGetAdded:(AddCityTVC *)tvc {
