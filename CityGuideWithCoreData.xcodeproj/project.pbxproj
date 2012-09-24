@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		889B2AF1161078FC00D6D314 /* CityMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889B2AEF161078FC00D6D314 /* CityMapViewController.m */; };
+		889B2AF2161078FC00D6D314 /* CityMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889B2AF0161078FC00D6D314 /* CityMapViewController.xib */; };
+		889B2AF41610794200D6D314 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889B2AF31610794200D6D314 /* MapKit.framework */; };
+		889B2AF61610794600D6D314 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889B2AF51610794600D6D314 /* CoreLocation.framework */; };
 		CD306EBD160024FA00F4D9B8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD306EBB160024FA00F4D9B8 /* Model.xcdatamodeld */; };
 		CDCE6EB1160029A50024E4DB /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */; };
 		CDCE6EBB160032FB0024E4DB /* CityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE6EB9160032FB0024E4DB /* CityTVC.m */; };
@@ -29,6 +33,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		889B2AEE161078FC00D6D314 /* CityMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityMapViewController.h; sourceTree = "<group>"; };
+		889B2AEF161078FC00D6D314 /* CityMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityMapViewController.m; sourceTree = "<group>"; };
+		889B2AF0161078FC00D6D314 /* CityMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityMapViewController.xib; sourceTree = "<group>"; };
+		889B2AF31610794200D6D314 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		889B2AF51610794600D6D314 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CD306EBC160024FA00F4D9B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		CDCE6EB0160029A50024E4DB /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -67,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				889B2AF61610794600D6D314 /* CoreLocation.framework in Frameworks */,
+				889B2AF41610794200D6D314 /* MapKit.framework in Frameworks */,
 				CDE423DC160011CF00CC7C52 /* UIKit.framework in Frameworks */,
 				CDE423DE160011CF00CC7C52 /* Foundation.framework in Frameworks */,
 				CDE423E0160011CF00CC7C52 /* CoreGraphics.framework in Frameworks */,
@@ -77,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		889B2AEC161078DF00D6D314 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				889B2AEE161078FC00D6D314 /* CityMapViewController.h */,
+				889B2AEF161078FC00D6D314 /* CityMapViewController.m */,
+				889B2AF0161078FC00D6D314 /* CityMapViewController.xib */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		CDCE6EB3160030330024E4DB /* Country */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +148,8 @@
 		CDE423DA160011CE00CC7C52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				889B2AF51610794600D6D314 /* CoreLocation.framework */,
+				889B2AF31610794200D6D314 /* MapKit.framework */,
 				CDE423DB160011CE00CC7C52 /* UIKit.framework */,
 				CDE423DD160011CF00CC7C52 /* Foundation.framework */,
 				CDE423DF160011CF00CC7C52 /* CoreGraphics.framework */,
@@ -142,6 +165,7 @@
 				CDE423ED160011CF00CC7C52 /* AppDelegate.m */,
 				CDCE6EB3160030330024E4DB /* Country */,
 				CDCE6EB4160030670024E4DB /* City */,
+				889B2AEC161078DF00D6D314 /* Map */,
 				CDE423E4160011CF00CC7C52 /* Supporting Files */,
 				CD306EBB160024FA00F4D9B8 /* Model.xcdatamodeld */,
 				CDCE6EB0160029A50024E4DB /* CoreDataTableViewController.h */,
@@ -217,6 +241,7 @@
 				CDE424071600132000CC7C52 /* AddCountryTVC.xib in Resources */,
 				CDCE6EBC160032FB0024E4DB /* CityTVC.xib in Resources */,
 				CDCE6ECC1600590F0024E4DB /* AddCityTVC.xib in Resources */,
+				889B2AF2161078FC00D6D314 /* CityMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +262,7 @@
 				CDCE6EC01600354D0024E4DB /* Country.m in Sources */,
 				CDCE6EC31600354E0024E4DB /* City.m in Sources */,
 				CDCE6ECB1600590F0024E4DB /* AddCityTVC.m in Sources */,
+				889B2AF1161078FC00D6D314 /* CityMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
