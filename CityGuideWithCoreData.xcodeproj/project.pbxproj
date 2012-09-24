@@ -52,6 +52,10 @@
 		889B2B061610838600D6D314 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
 		889B2B071610838600D6D314 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		889B2B1216110DA700D6D314 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		889B2B1516110F3E00D6D314 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		889B2B1616110F3F00D6D314 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		889B2B1716110F4500D6D314 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		889B2B1816110F4500D6D314 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD306EBC160024FA00F4D9B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CDCE6EAF160029A50024E4DB /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		CDCE6EB0160029A50024E4DB /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ko,
+				fr,
 			);
 			mainGroup = CDE423CC160011CE00CC7C52;
 			productRefGroup = CDE423D8160011CE00CC7C52 /* Products */;
@@ -309,6 +315,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				889B2B1216110DA700D6D314 /* en */,
+				889B2B1516110F3E00D6D314 /* ko */,
+				889B2B1716110F4500D6D314 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -317,6 +325,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				CDE423E7160011CF00CC7C52 /* en */,
+				889B2B1616110F3F00D6D314 /* ko */,
+				889B2B1816110F4500D6D314 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
