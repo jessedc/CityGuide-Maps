@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
 
-    self.navigationItem.title = NSLocalizedString(@"Add City", @"Add City");
+    self.navigationItem.title = NSLocalizedString(@"Add City", @"Add City ViewController NavigationItem title");
     self.navigationItem.rightBarButtonItem =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
 }

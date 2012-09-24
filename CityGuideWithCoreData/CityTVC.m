@@ -72,10 +72,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSString *titleString = [self.selectedCountry.countryName stringByAppendingString: @" Cities"];
-    
-    self.navigationItem.title = NSLocalizedString(titleString, titleString);
+
+  NSString *localizedFormat = NSLocalizedString(@"%@ Cities", @"'Australia' Cities LocalizedFormat");
+
+  NSString *titleString = [NSString stringWithFormat:localizedFormat, self.selectedCountry.countryName];
+    self.navigationItem.title = titleString;
+
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAddCityTVC:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }

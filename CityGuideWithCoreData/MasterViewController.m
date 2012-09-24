@@ -55,7 +55,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Countries", @"Countries");
+        self.navigationItem.title = NSLocalizedString(@"Countries", @"Countries ViewController navigationItem title");
     }
     
     return self;
