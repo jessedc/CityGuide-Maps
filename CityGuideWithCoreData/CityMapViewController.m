@@ -44,6 +44,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
+  [self.mapView addAnnotation:self.city];
+  [self centerMapAtCity:self.city animated:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -57,14 +59,30 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
+  NSString *annotationIdentifier = @"AnnotationViewReuseIdentifier";
 
+  MKPinAnnotationView *view = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
+
+  if (!view)
+  {
+    view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
+    view.canShowCallout = YES;
+    view.pinColor = MKPinAnnotationColorGreen;
+  }
+  else
+  {
+    view.annotation = annotation;
+  }
+
+  return view;
 }
 
 #pragma mark - CityMapViewController
 
 - (void)centerMapAtCity:(City *)city animated:(BOOL)animated
 {
-	
+  MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([city coordinate], 6000, 6000);
+  [self.mapView setRegion:region animated:animated];
 }
 
 - (IBAction)refreshButtonPressed:(id)sender
