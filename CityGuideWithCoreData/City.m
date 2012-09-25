@@ -14,5 +14,20 @@
 
 @dynamic cityName;
 @dynamic inCountry;
+@synthesize coordinate = _coordinate;
+
+- (CLLocationCoordinate2D)coordinate
+{
+  if (_coordinate.latitude == 0 && _coordinate.longitude == 0)
+  {
+    return CLLocationCoordinate2DMake(-37.813611, 144.963056); //Melbourne
+  }
+  return _coordinate;
+}
+
+- (NSString *)title
+{
+  return self.cityName;
+}
 
 @end
