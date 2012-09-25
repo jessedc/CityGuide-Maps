@@ -21,6 +21,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *nameCell;
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UILabel *nameCellLabel;
 
 @property (weak, nonatomic) id<AddCityTVCDelegate> delegate;
 - (IBAction)save:(id)sender;

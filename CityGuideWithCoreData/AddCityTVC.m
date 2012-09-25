@@ -47,6 +47,7 @@
 
 - (void)viewDidUnload
 {
+  [self setNameCellLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -73,7 +74,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.nameCell;
+  self.nameCellLabel.text = NSLocalizedString(@"City", @"New City 'Name Cell' label");
+  return self.nameCell;
 }
 
 @end
