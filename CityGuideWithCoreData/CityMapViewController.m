@@ -93,6 +93,20 @@
 
 - (void)appleGeocodeCity:(City *)city
 {
+  CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+  NSString *fullCityName = [NSString stringWithFormat:@"%@ %@", self.city.cityName, self.city.inCountry.countryName];
+  __block CityMapViewController *block_self = self;
+
+  self.navigationItem.rightBarButtonItem.enabled = NO;
+  [geocoder geocodeAddressString:fullCityName completionHandler:^(NSArray *placemarks, NSError *error) {
+    if ([placemarks count] > 0)
+    {
+      CLPlacemark *placeMark = [placemarks objectAtIndex:0];
+      self.city.coordinate = placeMark.location.coordinate;
+      [block_self centerMapAtCity:self.city animated:YES];
+      self.navigationItem.rightBarButtonItem.enabled = YES;
+    }
+  }];
 }
 
 - (void)googleGeocodeCity:(City *)city
